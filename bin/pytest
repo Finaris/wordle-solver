@@ -1,2 +1,0 @@
-#!/bin/bash
-PYTHONPATH=/Users/finaris/Projects/Git/wordle-solver/src python3 -m pytest pytest/$@

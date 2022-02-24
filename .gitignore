@@ -1,0 +1,4 @@
+# Don't copy things in bin but the executable creation script.
+bin/
+!bin/.make_py_executables.sh
+
