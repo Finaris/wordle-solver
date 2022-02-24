@@ -1,3 +1,7 @@
+# Don't include any pycache or idea cruft.
+*.idea/
+*__pycache__/
+
 # Don't copy things in bin but the executable creation script.
 bin/
 !bin/.make_py_executables.sh
