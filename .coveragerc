@@ -1,5 +1,5 @@
 [run]
-source = python
+source = src
 
 [report]
 exclude_lines =

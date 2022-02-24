@@ -18,9 +18,9 @@ py_executables+=("cli:wordle_solver.cli:main")
 # Save PYTHONPATH to use in all binaries.
 python_path="PYTHONPATH=$(pwd)/src"
 
-# Make a pytest executable.
-echo "#!/bin/bash\n$python_path python3 -m pytest pytest/\$@" > bin/pytest
-chmod +x bin/pytest
+# Make a test executable.
+echo "#!/bin/bash\n$python_path python3 -m pytest test/\$@" > bin/test
+chmod +x bin/test
 
 # Check if there are any additional executables to make.
 if [ ${#py_executables[@]} == 0 ]; then
