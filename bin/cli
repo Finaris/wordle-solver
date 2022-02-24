@@ -1,0 +1,2 @@
+#!/bin/bash
+PYTHONPATH=/Users/finaris/Projects/Git/wordle-solver/src python3 -c "from wordle_solver.cli import main;main()" $@
