@@ -13,10 +13,6 @@ class TestDownloadWords(TestCase):
         """Ignore logger outputs."""
         logger.disabled = True
 
-    def test_main(self):
-        """Checks that downloading words works end-to-end."""
-        pass
-
     @patch("wordle_solver.main.download_words.open")
     def test_save_words(self, mock_open):
         """Makes sure words are saved when found."""

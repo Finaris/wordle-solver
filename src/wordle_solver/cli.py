@@ -2,8 +2,6 @@
 
 """A CLI version of WordleSolver."""
 
-import json
-import re
 from os import path
 
 from wordle_solver.lexicon import EnglishLexicon
@@ -12,7 +10,7 @@ from wordle_solver.lexicon_strategies import (
     RandomWordSelectStrategy,
     WordleGuessFilterStrategy,
 )
-from wordle_solver.wordle_guess import WordleGuess
+from wordle_solver.wordle.wordle_guess import WordleGuess
 
 # Number of attempts in a Wordle game.
 TOTAL_ATTEMPTS: int = 6

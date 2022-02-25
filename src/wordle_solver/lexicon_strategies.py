@@ -5,7 +5,7 @@ from abc import ABC, abstractmethod
 from collections import Counter
 from typing import Set
 
-from wordle_solver.wordle_guess import WordleGuess, WordleGuessComponentType
+from wordle_solver.wordle.wordle_guess import WordleGuess, WordleGuessComponentType
 
 
 class WordSelectStrategy(ABC):

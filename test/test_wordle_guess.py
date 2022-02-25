@@ -2,7 +2,7 @@
 
 from unittest import TestCase
 
-from wordle_solver.wordle_guess import (
+from wordle_solver.wordle.wordle_guess import (
     WordleGuess,
     WordleGuessComponent,
     WordleGuessComponentType,
