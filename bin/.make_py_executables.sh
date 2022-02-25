@@ -7,7 +7,7 @@
 # To add something follow the below format:
 # py_executables+=("exe_name:module_path:entry_function")
 py_executables=()
-py_executables+=("download_words:wordle_solver.download_words:main")
+py_executables+=("download_words:wordle_solver.main.download_words:main")
 py_executables+=("cli:wordle_solver.cli:main")
 
 

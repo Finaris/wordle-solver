@@ -1,10 +1,17 @@
 """Script for downloading relevant word sources."""
 
+# TODO: This file is not generalizable, but most of the actual logic can stay
+#       the same.
+
 import json
+import logging
 import re
 from os import path
 
 import requests
+
+# Set logger for module.
+logger = logging.getLogger("download_words")
 
 
 def save_words(content: str, pattern: str, file_path: str) -> None:
@@ -15,8 +22,14 @@ def save_words(content: str, pattern: str, file_path: str) -> None:
     :param file_path: where to save resulting word list
     :return: None
     """
+    # Search for the pattern, returning if nothing is found.
+    search_result = re.search(pattern, content)
+    if search_result is None:
+        logger.warning(f"skipping pattern {pattern} (not found)")
+        return
+
     # Extract the relevant words into a Python list.
-    match = re.search(pattern, content).group()
+    match = search_result.group()
     json_words = match[match.index("[") :]
     all_valid_words = json.loads(json_words)
 
@@ -33,9 +46,9 @@ def main() -> None:
 
     # Save short and long words from this file.
     containing_directory = path.dirname(path.abspath(__file__))
-    short_words_path = path.join(containing_directory, "data/short_words.txt")
+    short_words_path = path.join(containing_directory, "../data/short_words.txt")
     save_words(content, r"var La=\[([a-z,\"]*)]", short_words_path)
-    long_words_path = path.join(containing_directory, "data/long_words.txt")
+    long_words_path = path.join(containing_directory, "../data/long_words.txt")
     save_words(content, r"Ta=\[([a-z,\"]*)]", long_words_path)
 
 
