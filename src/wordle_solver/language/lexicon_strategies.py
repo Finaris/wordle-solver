@@ -84,7 +84,7 @@ class CorrectLetterFilterStrategy(FilterStrategy):
         :param words: initial set of words to filter
         :return: filtered set of words
         """
-        correct_length_words = set(filter(lambda w: len(w) >= self.index, words))
+        correct_length_words = set(filter(lambda w: len(w) > self.index, words))
         return set(filter(lambda w: w[self.index] == self.letter, correct_length_words))
 
 
@@ -107,7 +107,7 @@ class MisplacedLetterFilterStrategy(FilterStrategy):
         :param words: initial set of words to filter
         :return: filtered set of words
         """
-        correct_length_words = set(filter(lambda w: len(w) >= self.index, words))
+        correct_length_words = set(filter(lambda w: len(w) > self.index, words))
         return set(filter(lambda w: w[self.index] != self.letter, correct_length_words))
 
 

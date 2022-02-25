@@ -4,7 +4,7 @@ from dataclasses import dataclass
 from string import ascii_lowercase
 from typing import Set
 
-from wordle_solver.lexicon_strategies import FilterStrategy, WordSelectStrategy
+from wordle_solver.language.lexicon_strategies import FilterStrategy, WordSelectStrategy
 
 # Set of all lowercase English letters.
 ASCII_LOWERCASE_SET: Set[str] = set(ascii_lowercase)
