@@ -4,7 +4,7 @@
 
 from os import path
 
-from wordle_solver.lexicon import EnglishLexicon
+from wordle_solver.language.lexicon import EnglishLexicon
 from wordle_solver.lexicon_strategies import (
     LengthFilterStrategy,
     RandomWordSelectStrategy,
